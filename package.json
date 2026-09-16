@@ -1,0 +1,11 @@
+{
+  "name": "mirror-molecules-investigation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A short science reasoning chapter adapted from Socrates Question",
+  "scripts": {
+    "start": "node tools/serve.mjs",
+    "test": "node --test community/*.test.mjs tests/*.test.mjs"
+  },
+  "engines": { "node": ">=22" }
+}

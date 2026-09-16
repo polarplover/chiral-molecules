@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <base href="../">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#244d43">
+  <meta name="description" content="一次7—9分钟的科学调查：零结果意味着没有作用，还是相反作用的抵消？">
+  <title>开发测试夹具：社区展示（非真实成绩）</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./chapters/chirality/style.css">
+  <script type="module">
+import {renderBoard} from './chapters/chirality/app.mjs';
+const parent=document.getElementById('app');parent.className='results';
+renderBoard(parent,{chapters:{chirality:{totalPlayers:1,entries:[{rank:1,nickname:'TEST ONLY <img src=x onerror=alert(1)>',login:'fixture-only',issueUrl:'#fixture',score:63,firstCorrectCount:2,correctedCount:2,hintedCount:2}],comments:[{nickname:'开发夹具（非同学）',login:'fixture-only',rating:4,body:'<script>alert("不应执行")<'+ '/script>\n仅验证文本渲染；不写入 community.json。',issueUrl:'#fixture'}]}}});
+const banner=document.createElement('h1');banner.textContent='仅供开发验收：下面是测试夹具，不是真实玩家';parent.prepend(banner);
+</script>
+</head>
+<body>
+  <a class="skip" href="#page-title">跳到故事正文</a>
+  <header class="masthead">
+    <a class="brand" href="./index.html"><span class="brand-mark">探</span>迷雾中的探险</a>
+    <nav aria-label="阅读工具">
+      <button id="clues-button">线索本 <span id="clue-count">0</span></button>
+      <button id="sources-button">资料</button>
+      <button id="restart-button">重来</button>
+    </nav>
+  </header>
+  <div id="storage-warning" class="warning" role="status" hidden></div>
+  <main id="app"><p class="loading">正在打开调查记录……</p></main>
+  <footer class="site-footer">依据真实发现过程改编 · 原创科学示意 · 阅读速度不计分<br><a href="./index.html">回到全部故事</a> · <a href="./docs/science-sources.md">科学资料与说明</a></footer>
+  <dialog id="dialog" aria-labelledby="dialog-title"><div class="dialog-head"><h2 id="dialog-title"></h2><button id="close-dialog" aria-label="关闭窗口">关闭 ×</button></div><div id="dialog-body"></div></dialog>
+  <noscript>本互动故事需要 JavaScript。请允许脚本后重新打开；不需要登录。</noscript>
+</body>
+</html>

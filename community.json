@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "updatedAt": "2026-09-16T14:43:26.458Z",
+  "repository": "",
+  "source": "github-issues",
+  "selfReported": true,
+  "chapters": {
+    "research": {
+      "entries": [],
+      "totalPlayers": 0,
+      "comments": []
+    },
+    "mrna": {
+      "entries": [],
+      "totalPlayers": 0,
+      "comments": []
+    },
+    "tsunami": {
+      "entries": [],
+      "totalPlayers": 0,
+      "comments": []
+    },
+    "cholera": {
+      "entries": [],
+      "totalPlayers": 0,
+      "comments": []
+    },
+    "hans": {
+      "entries": [],
+      "totalPlayers": 0,
+      "comments": []
+    },
+    "forgery": {
+      "entries": [],
+      "totalPlayers": 0,
+      "comments": []
+    },
+    "pulsar": {
+      "entries": [],
+      "totalPlayers": 0,
+      "comments": []
+    },
+    "aircraft": {
+      "entries": [],
+      "totalPlayers": 0,
+      "comments": []
+    },
+    "argon": {
+      "entries": [],
+      "totalPlayers": 0,
+      "comments": []
+    },
+    "nucleus": {
+      "entries": [],
+      "totalPlayers": 0,
+      "comments": []
+    },
+    "chirality": {
+      "entries": [],
+      "totalPlayers": 0,
+      "comments": []
+    }
+  }
+}
