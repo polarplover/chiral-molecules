@@ -7,5 +7,15 @@
     "start": "node tools/serve.mjs",
     "test": "node --test community/*.test.mjs tests/*.test.mjs"
   },
-  "engines": { "node": ">=22" }
+  "engines": {
+    "node": ">=22"
+  },
+  "homepage": "https://polarplover.github.io/chiral-molecules/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/polarplover/chiral-molecules.git"
+  },
+  "bugs": {
+    "url": "https://github.com/polarplover/chiral-molecules/issues"
+  }
 }

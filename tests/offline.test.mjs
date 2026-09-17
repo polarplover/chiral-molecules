@@ -49,7 +49,7 @@ test('offline install precaches existing relative files within a GitHub Pages pr
     await access(new URL('../' + path.slice(2), import.meta.url));
     assert.ok(h.stored.has(url.href));
   }
-  assert.deepEqual([...new Set(h.cacheNames)], ['socrates-chirality-v2']);
+  assert.deepEqual([...new Set(h.cacheNames)], ['socrates-chirality-v3']);
 });
 
 test('activation claims clients and every precached chapter resource loads while offline', async () => {

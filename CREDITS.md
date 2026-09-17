@@ -477,14 +477,12 @@ NIAID 的 RNA 翻译过程示意，显示核糖体读取 RNA 并形成蛋白链�
 - [盖革、马斯登：The Laws of Deflexion of α Particles through Large Angles（1913）](https://www.chemteam.info/Chem-History/GeigerMarsden-1913/GeigerMarsden-1913.html)：原论文转录及装置、计数表；用角度、薄箔厚度、材料与粒子速度作定量检验。
 - [曼彻斯特大学物理与天文学系：历史与传承](https://www.physics.manchester.ac.uk/about/history-and-heritage/)：实验室与原子核研究的机构背景；本关以原始论文区分1909现象、1911模型和后续检验。
 
-## 本派生作业新增章节：chirality
+## 新增章节：chirality
 
-《镜子里的两种分子：零度读数的秘密》参考原作的互动科学推理形式，由本作业项目新增；上游原章节与上文署名保留。新增文件位于 chapters/chirality/，入口 chirality.html。新章科学示意为项目原创SVG/CSS，不是历史照片，也未复制原章GPT插画或论文图作为新图。
+《镜子里的两种分子：零度读数的秘密》参考原作的互动科学推理形式；上游原章节与上文署名保留。新增代码位于 `chapters/chirality/`，入口为 `chirality.html`。新章科学示意为项目原创SVG/CSS，不是历史照片，也未复制原章GPT插画或论文图作为新图。
 
-Pasteur研究的科学和历史依据、教学示意与现代解释的边界见 docs/science-sources.md。可选AI配图仅交付 docs/image-prompts.md 的编号prompt，本次没有生成AI位图；之后整合实际生成图时需补记模型、日期、文件与来源。
+Pasteur研究的科学和历史依据，以及教学示意与现代解释的边界，见[科学资料说明](docs/science-sources.md)。
 
-原作不同素材仍适用各自许可。上游未提供整个项目的统一LICENSE，本派生作业不把原作或混合素材改标为MIT；THIRD_PARTY_NOTICES.txt保持原文。老师仓库链接仅用于来源说明，不作为本作品的成绩或评论投稿目标。
+五张AI辅助叙事插画按CHI-IMG-01至05编号保存在 `pics/`，对应新章第1、4、5、8、13页。整合日期为2026-09-17；仅规范文件名，保留原始字节。原始文件名对照见[素材说明](pics/README.md)，最初生成任务单见[配图提示词](docs/image-prompts.md)。这些图不是史料或实测证据，不替换科学SVG。实际生成模型、日期及平台许可未随文件提供，不推定为开放许可。
 
-### 2026-09-17 用户提供的AI配图整合
-
-上述最初仅提供prompt的状态已更新：用户提供的五张AI生成插画现按CHI-IMG-01至05编号保存在pics/，对应新章第1、4、5、8、13页。仅规范文件名，保留原始字节；详见pics/README.md的原始文件名对照。图片标注“AI辅助叙事插画”，不作为史料或实测证据，不替换原科学SVG。实际生成模型/日期及平台许可未随文件提供，不推定为开放许可。本次整合未调用图像生成。
+原作不同素材仍适用各自许可。上游未提供整个项目的统一LICENSE，本项目不把原作或混合素材改标为MIT；`THIRD_PARTY_NOTICES.txt`保留原文。上游仓库链接用于来源说明，不作为本作品的成绩或评论投稿目标。
