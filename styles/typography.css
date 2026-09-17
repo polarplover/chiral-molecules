@@ -1,0 +1,8 @@
+/* Shared reading typography for the original stories and the chirality chapter. */
+:root { --reading-font: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif; }
+body, .cq-dialog, .extinction-course { font-family: var(--reading-font); }
+/* Override the upstream release's more-specific serif heading rules. */
+h1, h2, h3, h4, h5, h6, [role="heading"], [data-slot="dialog-title"], .ending-title {
+  font-family: var(--reading-font) !important;
+  font-weight: 700 !important;
+}

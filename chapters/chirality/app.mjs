@@ -127,13 +127,13 @@ function renderResults(parent) {
   paragraph(box,'总题数 6。各题等权，按100／60／30取平均后四舍五入；分类、反思和阅读时间不影响分数。','count');
   box.append(element('h2','','值得回看的推理'));const review=element('ol','review-list');const currentMarks=marks(state);QUESTIONS.forEach((q,i)=>{if(currentMarks[i]==='f')return;const li=element('li');li.append(button(`${i+1}. ${q.skill} · ${currentMarks[i]==='h'?'使用过提示':'纠错后掌握'}`,()=>dispatch({type:'visit',index:PAGES.findIndex(p=>p.quiz===i)})));review.append(li);});if(review.children.length)box.append(review);else paragraph(box,'六题均首次独立答对。仍可从线索本回看证据的适用范围。');
   const actions=element('div','actions');actions.append(button('自愿提交成绩与留言',()=>showSubmission(true),'primary'),button('排行榜与玩家评论',openBoard),button('导出本机调查笔记',downloadNotes),button('重新挑战本章',restart));box.append(actions);
-  if(!REPOSITORY)paragraph(box,'当前为本地版，尚未配置你的 GitHub 仓库。成绩已保存在本机；配置后可从这里生成自愿投稿，不会投到老师仓库。','note');
-  paragraph(box,'真实试玩需要同学本人完成并主动发布。这里不会预置同学成绩或留言。','note');
+  if(!REPOSITORY)paragraph(box,'公开投稿暂不可用，成绩已保存在当前浏览器。你可以导出调查笔记，稍后再试。','note');
+  paragraph(box,'分享成绩与感想完全自愿。未主动发布的成绩和调查反思只保存在当前浏览器。','note');
 }
 function showSubmission(withScore) {
   const body=showDialog(withScore?'自愿提交成绩与留言':'自愿留下评论');
   paragraph(body,'只有你在 GitHub 核对并确认发布，成绩或留言才会公开。本机反思不上传。昵称、星级和评论均可选；单独评论至少填写文字或星级。');
-  if(!REPOSITORY){paragraph(body,'尚未配置你的仓库。请在 site-config.js 的 repository 填入“你的账号/你的仓库”，再重新打开网页。本地成绩继续保留。','warning');return;}
+  if(!REPOSITORY){paragraph(body,'站点尚未开放公开投稿，请稍后重试或联系维护者。你的成绩仍保存在当前浏览器。','warning');return;}
   paragraph(body,`公开投稿目的地：${REPOSITORY}`,'note');
   const form=element('form','form');
   const input=(name,text,tag='input')=>{const l=element('label','',text),el=element(tag);el.id=name;l.htmlFor=name;l.append(el);form.append(l);return el;};
@@ -147,14 +147,14 @@ function showSubmission(withScore) {
 function openBoard() {
   const body=showDialog('本章排行榜与玩家评论');paragraph(body,'玩家自报学习记录；同一 GitHub 账号保留本章最高分，同分并列，不以速度排名。','note');
   const controls=element('div','actions');const content=element('div');const status=element('p','status');status.setAttribute('role','status');
-  const load=async()=>{boardAbort?.abort();boardAbort=new AbortController();const controller=boardAbort;const timeout=setTimeout(()=>controller.abort(),12000);status.textContent='正在读取社区记录……';try{const response=await fetch(`${SNAPSHOT_URL}?refresh=${Date.now()}`,{signal:controller.signal,credentials:'omit',cache:'no-store'});if(!response.ok)throw Error('读取失败');const raw=await response.text();if(raw.length>2e6)throw Error('数据过大');const snapshot=validateCommunitySnapshot(JSON.parse(raw));if(!snapshot)throw Error('数据格式或仓库配置不匹配');if(controller!==boardAbort)return;renderBoard(content,snapshot);status.textContent=REPOSITORY?`快照更新：${new Date(snapshot.updatedAt).toLocaleString('zh-CN')}`:'当前本地空榜；配置你自己的仓库后才能收集真实投稿。';}catch(e){if(controller!==boardAbort||!$('dialog').open)return;status.textContent=`暂时无法读取社区记录（${e.message}）。本机成绩不受影响，可稍后刷新。`;}finally{clearTimeout(timeout);}};
+  const load=async()=>{boardAbort?.abort();boardAbort=new AbortController();const controller=boardAbort;const timeout=setTimeout(()=>controller.abort(),12000);status.textContent='正在读取社区记录……';try{const response=await fetch(`${SNAPSHOT_URL}?refresh=${Date.now()}`,{signal:controller.signal,credentials:'omit',cache:'no-store'});if(!response.ok)throw Error('读取失败');const raw=await response.text();if(raw.length>2e6)throw Error('数据过大');const snapshot=validateCommunitySnapshot(JSON.parse(raw));if(!snapshot)throw Error('数据格式或仓库配置不匹配');if(controller!==boardAbort)return;renderBoard(content,snapshot);status.textContent=REPOSITORY?`快照更新：${new Date(snapshot.updatedAt).toLocaleString('zh-CN')}`:'社区暂未开放，公开记录将在服务恢复后显示。';}catch(e){if(controller!==boardAbort||!$('dialog').open)return;status.textContent=`暂时无法读取社区记录（${e.message}）。本机成绩不受影响，可稍后刷新。`;}finally{clearTimeout(timeout);}};
   controls.append(button('刷新',load),button('写评论',()=>{closeDialog();showSubmission(false);}));body.append(controls,status,content);load();clearInterval(boardTimer);boardTimer=setInterval(()=>{if(!document.hidden)load();},20000);
 }
 export function renderBoard(parent,snapshot) {
   parent.replaceChildren();const chapter=snapshot.chapters.chirality;paragraph(parent,`本章 ${chapter.totalPlayers} 位参与者`,'board-meta');
-  if(!chapter.entries.length)paragraph(parent,'这里还没有真实成绩。完成本章后，你可以自愿留下第一条记录。','empty');
+  if(!chapter.entries.length)paragraph(parent,'还没有玩家分享成绩。完成本章后，你可以自愿留下第一条记录。','empty');
   else{const table=element('table','board');table.append(element('caption','sr-only','本章成绩排行榜'));const head=element('thead'),row=element('tr');['名次','玩家','成绩','题目状态'].forEach(t=>row.append(element('th','',t)));head.append(row);table.append(head);const tbody=element('tbody');chapter.entries.forEach(e=>{const tr=element('tr');tr.append(element('td','',String(e.rank)));const td=element('td');td.append(link(`${e.nickname} (@${e.login})`,e.issueUrl,true));tr.append(td,element('td','',`${e.score}/100`),element('td','',`${e.firstCorrectCount} 首答 / ${e.correctedCount} 纠错 / ${e.hintedCount} 提示`));tbody.append(tr);});table.append(tbody);parent.append(table);}
-  parent.append(element('h3','','玩家评论'));if(!chapter.comments.length)paragraph(parent,'还没有真实评论。','empty');chapter.comments.forEach(c=>{const article=element('article','comment');article.append(element('strong','',c.nickname),element('small','',` · @${c.login}${c.rating?' · '+c.rating+' 星':''}`));paragraph(article,c.body);article.append(link('查看原投稿 ↗',c.issueUrl,true));parent.append(article);});
+  parent.append(element('h3','','玩家评论'));if(!chapter.comments.length)paragraph(parent,'还没有玩家留言。','empty');chapter.comments.forEach(c=>{const article=element('article','comment');article.append(element('strong','',c.nickname),element('small','',` · @${c.login}${c.rating?' · '+c.rating+' 星':''}`));paragraph(article,c.body);article.append(link('查看原投稿 ↗',c.issueUrl,true));parent.append(article);});
 }
 render();
 if('serviceWorker' in navigator && location.protocol!=='file:')navigator.serviceWorker.register('./chirality-sw.js').catch(()=>{});

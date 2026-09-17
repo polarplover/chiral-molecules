@@ -1,3 +1,5 @@
+> **历史归档：初次开发前的架构审计。** 以下按当时状态保留；本地环境、未配置或未部署等描述不代表当前版本。当前使用说明见[项目README](../README.md)，维护配置见[部署指南](deployment.md)。
+
 # 原项目架构审计（修改前）
 
 来源：yaoyuzhang1/socrates-question，main 快照 `5ac771e3e1a4f69794dddd07c9893033247cdd39`。当前工作区原为空，并非已有 clone。通过公开下载取得发布包；index.html 的 Git blob SHA 为 `7c18ee7f4e35644f8187fe29fe7069d4a6fb358f`，已核验。不设置老师仓库为 push 目标。

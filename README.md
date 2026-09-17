@@ -1,59 +1,52 @@
 # 镜子里的两种分子：零度读数的秘密
 
-参考老师的[《迷雾中的探险》](https://github.com/yaoyuzhang1/socrates-question)互动科学推理形式制作的本地作业项目。保留原10章，新增独立短篇 `chirality`；上游原说明保存在 [upstream-readme.md](docs/upstream-readme.md)。
+一个关于“零结果”的互动科学故事：仪器显示零，是没有效应，还是两个相反作用恰好抵消？跟随晶体观察、分组实验与重新组合，建立自己的解释。
 
-**本作品入口：[全部故事](index.html) / [新章节](chirality.html)**。这些是仓库内相对入口，不代表已经部署；目前没有公开游戏地址。
+**[开始本章](https://polarplover.github.io/chiral-molecules/chirality.html) · [浏览全部故事](https://polarplover.github.io/chiral-molecules/)**
 
-## 新章节
+本项目参考[《迷雾中的探险》](https://github.com/yaoyuzhang1/socrates-question)的互动科学推理形式，保留原有10个故事，并增加独立章节 `chirality`。
 
-14个短页面、6道等权计分题、2次不计分反思，预计7—9分钟，难度4/5。以Pasteur相关发现为背景，追查“零读数是没有效应，还是相反作用抵消”。晶体分类使用点击或键盘，不要求拖拽。科学示意为原创SVG，历史观察、教学安排和现代解释分别标注。
+## 怎样游玩
 
-六题依次练习：区分竞争模型、事先预测、限定证据结论、干预预测、因果重建、生物选择性与外推边界。结果页在完成预测后才创建；没有提前插入的后续结果DOM。
+无需登录即可开始，适合没有系统学习过大学有机化学的高中生及大学低年级学生。
 
-每题首次独立答对100、纠错后答对60、使用提示后掌握30，最终平均并四舍五入。速度不计分。进度使用独立localStorage键，重开只影响本章；反思只留本机，可导出，不进入成绩包。
+- 预计 **7—9分钟**，难度 **4/5 · 进阶**。
+- **14页、6道推理题、2次不计分反思**，另有点击分组的晶体观察活动。
+- 逐页获取证据，先预测再揭开记录；答错后有针对性解释，可以重新作答。
+- 手机和键盘均可完成核心操作，不需要精确拖拽。
+- 原创SVG承担科学示意，AI辅助插画提供叙事情境；历史观察、教学示意与现代解释分别标注。
 
-## 本地运行与测试
+六道题依次练习：区分竞争模型、事先预测、限定证据结论、干预预测、因果重建，以及生物选择性与外推边界。本章依据Pasteur相关发现改编，不是逐字历史对白。
 
-需要Node.js 22或更高版本，无需安装第三方依赖。不要直接双击HTML：新增章节使用ES模块和Service Worker，需要HTTP或HTTPS。
+## 成绩与调查记录
 
-```powershell
-node tools/serve.mjs
-```
+每题等权：首次独立答对100分、纠错后答对60分、使用提示后掌握30分；最终取平均值并四舍五入。**阅读速度不影响成绩。** 结算页显示三种答题情况、总题数和值得回看的题目。
 
-打开 http://127.0.0.1:4173/socrates-question/ 。也可在包含npm的常规Node环境使用 `npm start`。
+进度和成绩保存在当前浏览器，刷新可继续；重新开始本章不会清除其他章节。最初判断与最后反思只留在本机调查记录，可导出，不进入公开成绩包。清理网站数据或更换浏览器不会保留这些记录。
 
-```powershell
-node --test community/*.test.mjs tests/*.test.mjs
-```
+首次联网加载并完成缓存后，本章可以离线继续；排行榜、投稿和外部资料链接仍需要网络。
 
-等同于 `npm test`。初次联网加载新章后可离线刷新继续；社区在线功能和外部科学资料仍需要网络。浏览器清理网站数据会删除本机记录。
+## 排行榜与留言
 
-原作81张WebP和396个MP3保留完整。可选的离线完整性检查：
+通关后可以自愿填写昵称、星级和意见，预览草稿，再前往[本仓库的Issues](https://github.com/polarplover/chiral-molecules/issues)由本人确认发布。游玩和浏览榜单不要求GitHub登录，公开投稿需要GitHub账号。
 
-```powershell
-python tools/restore-upstream-assets.py --verify-only
-```
+公开记录包含GitHub账号、成绩及自愿填写的内容。同一账号每关保留最高分，同分并列；评论按纯文本展示。关闭来源Issue后，相应记录会在下一次同步后撤回。排行榜来自GitHub Actions生成的快照，更新可能有延迟。这是玩家自报记录，不是正式考核系统。
 
-脚本默认读取固定上游清单 `docs/upstream-tree.json`；不加验证参数时可恢复缺失资源，需网络及curl。
+详见[社区规则与隐私说明](community/README.md)。请勿在留言中填写联系方式、学号等私人信息。
 
-## 排行榜、评论和发布
+## 资料与参与
 
-目前 `site-config.js` 的 `repository` 留空。设置为**你自己的** `账号/仓库名`，再按 [部署步骤](docs/deployment.md) 推送和启用GitHub Pages。代码拒绝把老师仓库作为投稿目标。
+- [科学资料与文案边界](docs/science-sources.md)：史料来源、教学改编及结论限制。
+- [开发指南](docs/development.md)：运行、测试、文件结构与贡献流程。
+- [部署指南](docs/deployment.md)：GitHub Pages及社区同步配置。
+- [素材说明](pics/README.md)与[配图提示词](docs/image-prompts.md)：五张叙事插画的用途和编号。
+- [可选教学记录模板](homework-notes.md)：记录真实游玩体验与同伴反馈。
+- [历史架构审计](docs/architecture-audit.md)与[验收记录](docs/acceptance.md)：实现背景及分日期验证证据。
 
-不登录也能游玩。玩家通关后自愿填写昵称、星级和意见，预览草稿，前往GitHub由本人确认发Issue。GitHub Actions从开放Issues生成 `community.json`，客户端读取快照；同账号每关保留最高分，同分并列。评论按文本显示，不执行HTML。详情见 [社区协议](community/README.md)。
-
-生产快照目前是真实空榜；测试夹具只在测试中使用，不充当同学记录。`tests/community-preview.html` 是明确标注的界面测试页面，不是公开成绩来源。
-
-## 审计、资料与作业记录
-
-- [原项目架构审计](docs/architecture-audit.md)：编译React发布包、计分、存档、社区与最小接入范围。
-- [科学资料与文案边界](docs/science-sources.md)：Institut Pasteur、RSC、Science History Institute、Flack和Gál的历史研究。
-- [本地验收记录](docs/acceptance.md)：自动测试、实际浏览器、手机、离线、存档隔离与尚需外部验证的事项。
-- [可选配图提示词](docs/image-prompts.md)：CHI-IMG-01至05，指定文件名；保留给gpt-image-2.5的prompt；用户后来提供的5张图片已整合，见[pics素材说明](pics/README.md)。
-- [本人作业与同学反馈模板](homework-notes.md)：本人真实玩原作两关，再邀请至少三位同学真实通关和留言。模板不含虚构成绩。
+欢迎通过[Issue](https://github.com/polarplover/chiral-molecules/issues)报告科学表述或交互问题；反馈时请描述所在页面、操作步骤和预期结果，避免附带私人调查笔记。
 
 ## 来源、署名与许可
 
-上游来自 `yaoyuzhang1/socrates-question` 的固定快照，保留原章节、署名及第三方声明。新增章节使用原创代码与SVG，没有复制原作GPT插画作为新章配图。参见 [CREDITS](CREDITS.md) 和 [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.txt)。
+上游作品为 `yaoyuzhang1/socrates-question`，其原说明见[归档README](docs/upstream-readme.md)。本项目保留原章节、署名及第三方声明；新增章节代码与SVG位于 `chapters/chirality/`。
 
-上游各素材适用不同许可，含署名、非商业或禁止改编要求；上游没有整体LICENSE，不能据此将整个派生项目声明为MIT。发布时保留说明，遵循各素材自身条件。本项目目前未向任何GitHub仓库推送。
+请阅读[CREDITS](CREDITS.md)、[THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.txt)和[图片来源说明](pics/README.md)。不同素材具有不同许可，包括署名、非商业或禁止改编等条件。上游没有整体LICENSE，本仓库不将混合来源内容统一声明为MIT；再分发或改编时应逐项遵循原许可。
