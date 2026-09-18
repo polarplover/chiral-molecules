@@ -1,64 +1,89 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-16T14:43:26.458Z",
+  "updatedAt": "2026-09-18T02:33:03.814Z",
   "repository": "polarplover/chiral-molecules",
   "source": "github-issues",
   "selfReported": true,
   "chapters": {
     "research": {
-      "entries": [],
       "totalPlayers": 0,
+      "entries": [],
       "comments": []
     },
     "mrna": {
-      "entries": [],
       "totalPlayers": 0,
+      "entries": [],
       "comments": []
     },
     "tsunami": {
-      "entries": [],
       "totalPlayers": 0,
+      "entries": [],
       "comments": []
     },
     "cholera": {
-      "entries": [],
       "totalPlayers": 0,
+      "entries": [],
       "comments": []
     },
     "hans": {
-      "entries": [],
       "totalPlayers": 0,
+      "entries": [],
       "comments": []
     },
     "forgery": {
-      "entries": [],
       "totalPlayers": 0,
+      "entries": [],
       "comments": []
     },
     "pulsar": {
-      "entries": [],
       "totalPlayers": 0,
+      "entries": [],
       "comments": []
     },
     "aircraft": {
-      "entries": [],
       "totalPlayers": 0,
+      "entries": [],
       "comments": []
     },
     "argon": {
-      "entries": [],
       "totalPlayers": 0,
+      "entries": [],
       "comments": []
     },
     "nucleus": {
-      "entries": [],
       "totalPlayers": 0,
+      "entries": [],
       "comments": []
     },
     "chirality": {
-      "entries": [],
-      "totalPlayers": 0,
-      "comments": []
+      "totalPlayers": 1,
+      "entries": [
+        {
+          "rank": 1,
+          "login": "Kn1ght-Lai",
+          "nickname": "Kn1ght",
+          "submittedAt": "2026-09-18T02:32:49.000Z",
+          "issueNumber": 2,
+          "issueUrl": "https://github.com/polarplover/chiral-molecules/issues/2",
+          "score": 100,
+          "firstCorrectCount": 6,
+          "correctedCount": 0,
+          "hintedCount": 0,
+          "totalQuestions": 6,
+          "completedAt": "2026-09-18T02:29:45.285Z"
+        }
+      ],
+      "comments": [
+        {
+          "login": "Kn1ght-Lai",
+          "nickname": "Kn1ght",
+          "submittedAt": "2026-09-18T02:32:49.000Z",
+          "issueNumber": 2,
+          "issueUrl": "https://github.com/polarplover/chiral-molecules/issues/2",
+          "body": "好玩！",
+          "rating": 5
+        }
+      ]
     }
   }
 }
