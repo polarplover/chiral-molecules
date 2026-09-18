@@ -9,5 +9,5 @@ self.addEventListener('fetch', event => {
   event.respondWith(fetch(event.request).then(response => {
     if (response.ok) { const copy=response.clone(); event.waitUntil(caches.open(CACHE).then(cache=>cache.put(event.request,copy))); }
     return response;
-  }).catch(()=>caches.match(event.request)));
+  }).catch(()=>caches.match(event.request, { cacheName: CACHE })));
 });
