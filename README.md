@@ -50,3 +50,4 @@
 上游作品为 `yaoyuzhang1/socrates-question`，其原说明见[归档README](docs/upstream-readme.md)。本项目保留原章节、署名及第三方声明；新增章节代码与SVG位于 `chapters/chirality/`。
 
 请阅读[CREDITS](CREDITS.md)、[THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.txt)和[图片来源说明](pics/README.md)。不同素材具有不同许可，包括署名、非商业或禁止改编等条件。上游没有整体LICENSE，本仓库不将混合来源内容统一声明为MIT；再分发或改编时应逐项遵循原许可。
+Powered by Codex and GPT-6 Astra.
